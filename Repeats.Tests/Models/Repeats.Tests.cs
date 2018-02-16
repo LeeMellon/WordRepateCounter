@@ -17,18 +17,20 @@ namespace Repeats.Tests
       newRepeatCounter.SetTestWord("Hello ");
       newRepeatCounter.SetTargetString("Hello World");
       newRepeatCounter.SetRepeatsCounter(2);
-      newRepeatCounter.SetTargetStringList();
+      newRepeatCounter.SetTargetStringList("Hello World");
       string testWord = newRepeatCounter.GetTestWord();
-      string removalIndexTwo = newRepeatCounter.GetRemovals[2];
-      string targetString = newRepeatCounterGetTargetString();
+      List<string> testingListRemovals = newRepeatCounter.GetRemovals();
+      string removalIndexTwo = testingListRemovals[2];
+      string targetString = newRepeatCounter.GetTargetString();
       int repeatInt = newRepeatCounter.GetRepeats();
-      string TargetStringListIndexTwo = newRepeatCounter.GetTargetStringList([1]);
+      List<string> testingList = newRepeatCounter.GetTargetStringList();
+      string TargetStringListIndexOne = testingList[1];
       //assert
       Assert.AreEqual("Hello", testWord);
-      Assert.AreEqual("#", removalIndexTwo);
+      Assert.AreEqual("!", removalIndexTwo);
       Assert.AreEqual("Hello World", targetString);
-      Assert.AreEqual("2", repeatInt);
-      Assert.AreEqual("World", TargetStringListIndexTwo);
+      Assert.AreEqual(2, repeatInt);
+      Assert.AreEqual("World", TargetStringListIndexOne);
 
 
     }
