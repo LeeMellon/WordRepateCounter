@@ -31,8 +31,62 @@ namespace Repeats.Tests
       Assert.AreEqual("Hello World", targetString);
       Assert.AreEqual(2, repeatInt);
       Assert.AreEqual("World", TargetStringListIndexOne);
-
-
     }
+
+
+    [TestMethod]
+    public void CleanTargetStrings_RemoveAsterix_Red()
+    {
+      //arrange
+      RepeatCounter newRepeatCounter = new RepeatCounter();
+      //action
+      string newTargetString = "Hell*o Wo*rld";
+      newRepeatCounter.SetTargetStringList(newTargetString);
+      newRepeatCounter.CleanTargetStrings();
+      List<string> testingList = newRepeatCounter.GetTargetStringList();
+      string TargetStringListIndexOne = testingList[1];
+      //assert
+
+      Assert.AreEqual("World", TargetStringListIndexOne);
+    }
+
+    [TestMethod]
+    public void GetsAndSets_AllGettersAndSetters_Green()
+    {
+      //arrange
+      RepeatCounter newRepeatCounter = new RepeatCounter();
+      //action
+
+      //assert
+
+      Assert.AreEqual("World", TargetStringListIndexOne);
+    }
+
+    [TestMethod]
+    public void GetsAndSets_AllGettersAndSetters_Green()
+    {
+      //arrange
+      RepeatCounter newRepeatCounter = new RepeatCounter();
+      //action
+
+      //assert
+
+      Assert.AreEqual("World", TargetStringListIndexOne);
+    }
+
+    [TestMethod]
+    public void GetsAndSets_AllGettersAndSetters_Green()
+    {
+      //arrange
+      RepeatCounter newRepeatCounter = new RepeatCounter();
+      //action
+
+      //assert
+
+      Assert.AreEqual("World", TargetStringListIndexOne);
+    }
+
+
+
   }
 }
