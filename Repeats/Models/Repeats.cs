@@ -54,7 +54,7 @@ namespace Repeats.Models
 
       public void SetRepeatsCounter (int newCounter)
       {
-        _repeats = newCounter;
+        _repeats += newCounter;
       }
 
       public void SetTargetStringList(string newString)
@@ -82,6 +82,16 @@ namespace Repeats.Models
 
       }
 
+      public void CompareStrings()
+      {
+        foreach(string word in _targetStringList)
+        {
+          if(word == _testWord)
+          {
+            SetRepeatsCounter(1);
+          }
+        }
+      }
 
 
   }
