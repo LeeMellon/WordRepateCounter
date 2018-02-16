@@ -40,8 +40,7 @@ namespace Repeats.Tests
       //arrange
       RepeatCounter newRepeatCounter = new RepeatCounter();
       //action
-      string newTargetString = "Hell*o Wo*rld";
-      newRepeatCounter.SetTargetStringList(newTargetString);
+      newRepeatCounter.SetTargetStringList("Hell*o Wo*rld");
       newRepeatCounter.CleanTargetStrings();
       List<string> testingList = newRepeatCounter.GetTargetStringList();
       string TargetStringListIndexOne = testingList[1];
@@ -50,41 +49,41 @@ namespace Repeats.Tests
       Assert.AreEqual("World", TargetStringListIndexOne);
     }
 
-    [TestMethod]
-    public void GetsAndSets_AllGettersAndSetters_Green()
-    {
-      //arrange
-      RepeatCounter newRepeatCounter = new RepeatCounter();
-      //action
-
-      //assert
-
-      Assert.AreEqual("World", TargetStringListIndexOne);
-    }
-
-    [TestMethod]
-    public void GetsAndSets_AllGettersAndSetters_Green()
-    {
-      //arrange
-      RepeatCounter newRepeatCounter = new RepeatCounter();
-      //action
-
-      //assert
-
-      Assert.AreEqual("World", TargetStringListIndexOne);
-    }
-
-    [TestMethod]
-    public void GetsAndSets_AllGettersAndSetters_Green()
-    {
-      //arrange
-      RepeatCounter newRepeatCounter = new RepeatCounter();
-      //action
-
-      //assert
-
-      Assert.AreEqual("World", TargetStringListIndexOne);
-    }
+    // [TestMethod]
+    // public void GetsAndSets_AllGettersAndSetters_Green()
+    // {
+    //   //arrange
+    //   RepeatCounter newRepeatCounter = new RepeatCounter();
+    //   //action
+    //
+    //   //assert
+    //
+    //   Assert.AreEqual("World", TargetStringListIndexOne);
+    // }
+    //
+    // [TestMethod]
+    // public void GetsAndSets_AllGettersAndSetters_Green()
+    // {
+    //   //arrange
+    //   RepeatCounter newRepeatCounter = new RepeatCounter();
+    //   //action
+    //
+    //   //assert
+    //
+    //   Assert.AreEqual("World", TargetStringListIndexOne);
+    // }
+    //
+    // [TestMethod]
+    // public void GetsAndSets_AllGettersAndSetters_Green()
+    // {
+    //   //arrange
+    //   RepeatCounter newRepeatCounter = new RepeatCounter();
+    //   //action
+    //
+    //   //assert
+    //
+    //   Assert.AreEqual("World", TargetStringListIndexOne);
+    // }
 
 
 

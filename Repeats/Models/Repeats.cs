@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
+using System.Text;
 
 
 namespace Repeats.Models
@@ -62,6 +64,24 @@ namespace Repeats.Models
         _targetStringList = newList;
       }
 
+      public void CleanTargetStrings()
+      {
+        List<string> newTargetList = new List<string>();
+        foreach(string word in _targetStringList)
+        {
+          foreach(string item in _removals)
+          {
+            if (word.Contains(item))
+            {
+              string replacementString = word.Replace(item, "");
+              newTargetList.Add(replacementString);
+
+            }
+          }
+        }
+         _targetStringList = newTargetList;
+
+      }
 
 
   }
