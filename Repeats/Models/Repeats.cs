@@ -11,8 +11,8 @@ namespace Repeats.Models
       private string _targetString;
       private List<string> _targetStringList;
       private int _repeats;
-      // private List<string> _removals = new List<string>(){
-      //   "{", "}", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "=", "-", "0", "9", "8", "7", "6", "5", "4", "3", "2", "1", """, "'", ";", ":", "?", "/", ">", ".", ",", "<"};
+      private List<string> _removals = new List<string>(){
+        "{", "}", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "=", "-", "0", "9", "8", "7", "6", "5", "4", "3", "2", "1", "'", ";", ":", "?", "/", ">", ".", ",", "<"};
 
 
       public string GetTestWord()
@@ -25,7 +25,7 @@ namespace Repeats.Models
         return _targetString;
       }
 
-      public string GetRemovals()
+      public List<string> GetRemovals()
       {
         return _removals;
       }
@@ -33,11 +33,6 @@ namespace Repeats.Models
       public int GetRepeats()
       {
         return _repeats;
-      }
-
-      public string GetRemovals()
-      {
-        return _removals;
       }
 
       public List<string> GetTargetStringList()
@@ -62,7 +57,8 @@ namespace Repeats.Models
 
       public void SetTargetStringList(string newString)
       {
-        List<string> newList = newString.Split(' ').ToList();
+        string[] split = newString.Split(' ');
+        List<String> newList=new List<string>(split);
         _targetStringList = newList;
       }
 

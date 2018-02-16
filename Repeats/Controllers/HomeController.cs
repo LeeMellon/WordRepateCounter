@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using Repeats.Models
+using Repeats.Models;
 using System;
 
 namespace Repeats.Controllers
