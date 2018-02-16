@@ -5,19 +5,32 @@ using Repeats.Models;
 
 namespace Repeats.Tests
 // {
-//   [TestClass]
-//   public class RepeatCounterTest
-//   {
-//     [TestMethod]
-//     public void GetsAndSets_AllGettersAndSetters_Red()
-//     {
-//       //arrange
-//       XXXXXXXXXX newXXXXXXXX = new XXXXXXXXX();
-//       //action
-//       XXXXXXXXXXXXX
-//       //assert
-//       Assert.AreEqual(XXXXX, XXXXX);
-//       Assert.AreEqual(XXXXX, XXXXXX);
-//     }
-//   }
+  [TestClass]
+  public class RepeatCounterTest
+  {
+    [TestMethod]
+    public void GetsAndSets_AllGettersAndSetters_Red()
+    {
+      //arrange
+      RepeatCounter newRepeatCounter = new RepeatCounter();
+      //action
+      newRepeatCounter.SetTestWord("Hello");
+      newRepeatCounter.SetTargetString("Hello World");
+      newRepeatCounter.SetRepeatsCounter(2);
+      newRepeatCounter.SetTargetStringList();
+      string testWord = newRepeatCounter.GetTestWord();
+      string removalIndexTwo = newRepeatCounter.GetRemovals[2];
+      string targetString = newRepeatCounterGetTargetString();
+      int repeatInt = newRepeatCounter.GetRepeats();
+      string TargetStringListIndexTwo = newRepeatCounter.GetTargetStringList([1]);
+      //assert
+      Assert.AreEqual("Hello", testWord);
+      Assert.AreEqual("#", removalIndexTwo);
+      Assert.AreEqual("Hello World", targetString);
+      Assert.AreEqual("2", repeatInt);
+      Assert.AreEqual("World", TargetStringListIndexTwo);
+
+
+    }
+  }
 }
