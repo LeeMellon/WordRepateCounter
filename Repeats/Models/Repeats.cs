@@ -11,10 +11,60 @@ namespace Repeats.Models
       private string _targetString;
       private List<string> _targetStringList;
       private int _repeats;
-      private List<string> _removals = new List<string>(){
-        "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+","=","-","0","9","8","7","6","5","4", "3","2","1","{","}","[", "]", """, "'",";",":", "?","/",">",".",","<"}
+      // private List<string> _removals = new List<string>(){
+      //   "{", "}", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "=", "-", "0", "9", "8", "7", "6", "5", "4", "3", "2", "1", """, "'", ";", ":", "?", "/", ">", ".", ",", "<"};
 
 
-    }
+      public string GetTestWord()
+      {
+        return _testWord;
+      }
 
+      public string GetTargetString()
+      {
+        return _targetString;
+      }
+
+      public string GetRemovals()
+      {
+        return _removals;
+      }
+
+      public int GetRepeats()
+      {
+        return _repeats;
+      }
+
+      public string GetRemovals()
+      {
+        return _removals;
+      }
+
+      public List<string> GetTargetStringList()
+      {
+        return _targetStringList;
+      }
+
+      public void SetTestWord(string newTestWord)
+      {
+        _testWord = newTestWord.Trim();
+      }
+
+      public void SetTargetString(string newTargetString)
+      {
+        _targetString = newTargetString;
+      }
+
+      public void SetRepeatsCounter (int newCounter)
+      {
+        _repeats = newCounter;
+      }
+
+      public void SetTargetStringList(string newString)
+      {
+        List<string> newList = newString.Split(' ').ToList();
+        _targetStringList = newList;
+      }
+
+  }
 }

@@ -4,17 +4,17 @@ using System;
 using Repeats.Models;
 
 namespace Repeats.Tests
-// {
+ {
   [TestClass]
   public class RepeatCounterTest
   {
     [TestMethod]
-    public void GetsAndSets_AllGettersAndSetters_Red()
+    public void GetsAndSets_AllGettersAndSetters_Green()
     {
       //arrange
       RepeatCounter newRepeatCounter = new RepeatCounter();
       //action
-      newRepeatCounter.SetTestWord("Hello");
+      newRepeatCounter.SetTestWord("Hello ");
       newRepeatCounter.SetTargetString("Hello World");
       newRepeatCounter.SetRepeatsCounter(2);
       newRepeatCounter.SetTargetStringList();
