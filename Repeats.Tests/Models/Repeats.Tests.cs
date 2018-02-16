@@ -87,17 +87,41 @@ namespace Repeats.Tests
       Assert.AreEqual(2, repeatInt);
     }
 
-    // [TestMethod]
-    // public void GetsAndSets_AllGettersAndSetters_Green()
-    // {
-    //   //arrange
-    //   RepeatCounter newRepeatCounter = new RepeatCounter();
-    //   //action
-    //
-    //   //assert
-    //
-    //   Assert.AreEqual("World", TargetStringListIndexOne);
-    // }
+    [TestMethod]
+    public void CompareStrings_CounterToTwo_Red()
+    {
+      //arrange
+      RepeatCounter newRepeatCounter = new RepeatCounter();
+      //action
+      newRepeatCounter.SetTestWord(" Hello ");
+      string test = newRepeatCounter.GetTestWord();
+      newRepeatCounter.SetTargetStringList("Hell* H@ello");
+      newRepeatCounter.CleanTargetStrings();
+      List<string> testList = newRepeatCounter.GetTargetStringList();
+      newRepeatCounter.CompareStrings();
+      int repeatInt = newRepeatCounter.GetRepeats();
+
+      //assert
+
+      Assert.AreEqual(2, repeatInt);
+    }
+    [TestMethod]
+    public void CompareStrings_TestWordWithExclusion_Green()
+    {
+      //arrange
+      RepeatCounter newRepeatCounter = new RepeatCounter();
+      //action
+      newRepeatCounter.SetTestWord(" #Hello ");
+      newRepeatCounter.SetTargetStringList("#He$llo #H@ello");
+      newRepeatCounter.SetRemovals();
+      newRepeatCounter.CleanTargetStrings();
+      newRepeatCounter.CompareStrings();
+      int repeatInt = newRepeatCounter.GetRepeats();
+
+      //assert
+
+      Assert.AreEqual(2, repeatInt);
+    }
     //
     // [TestMethod]
     // public void GetsAndSets_AllGettersAndSetters_Green()

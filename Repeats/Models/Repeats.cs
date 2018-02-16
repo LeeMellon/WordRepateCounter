@@ -57,6 +57,17 @@ namespace Repeats.Models
         _repeats += newCounter;
       }
 
+      public void SetRemovals()
+      {
+        List<string> newRemoval = new List<string>();
+        foreach(string item in _removals)
+        if (_testWord.Contains(item) == false)
+        {
+          newRemoval.Add(item);
+        }
+        _removals = newRemoval;
+      }
+
       public void SetTargetStringList(string newString)
       {
         string[] split = newString.Split(' ');
