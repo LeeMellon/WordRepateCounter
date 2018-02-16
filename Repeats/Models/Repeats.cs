@@ -75,13 +75,13 @@ namespace Repeats.Models
             {
               string replacementString = word.Replace(item, "");
               newTargetList.Add(replacementString);
-
             }
           }
         }
          _targetStringList = newTargetList;
 
       }
+
 
 
   }

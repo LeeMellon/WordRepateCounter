@@ -35,7 +35,7 @@ namespace Repeats.Tests
 
 
     [TestMethod]
-    public void CleanTargetStrings_RemoveAsterix_Red()
+    public void CleanTargetStrings_RemoveAsterix_Green()
     {
       //arrange
       RepeatCounter newRepeatCounter = new RepeatCounter();
@@ -49,6 +49,21 @@ namespace Repeats.Tests
       Assert.AreEqual("World", TargetStringListIndexOne);
     }
 
+    [TestMethod]
+    public void CleanTargetStrings_RemoveAsterix_Red()
+    {
+      //arrange
+      RepeatCounter newRepeatCounter = new RepeatCounter();
+      //action
+      newRepeatCounter.SetTargetStringList("Hell*o Wo*rld");
+      newRepeatCounter.CleanTargetStrings();
+      List<string> testingList = newRepeatCounter.GetTargetStringList();
+      string TargetStringListIndexOne = testingList[1];
+      //assert
+
+      Assert.AreEqual("Wo*rld", TargetStringListIndexOne);
+    }
+    //
     // [TestMethod]
     // public void GetsAndSets_AllGettersAndSetters_Green()
     // {
