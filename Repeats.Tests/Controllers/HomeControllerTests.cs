@@ -36,5 +36,19 @@ namespace Repeats.Tests
       //assert
       Assert.IsInstanceOfType(result, typeof(ViewResult));
     }
+
+    [TestMethod]
+    public void Index_HasCorrectModelType_Green()
+    {
+      //arrange
+      ViewResult IndexView = new HomeController().Index() as ViewResult;
+      //act
+      var result = IndexView.ViewData.Model;
+      // System.Console.WriteLine("result: "+result);
+
+      //assert
+      Assert.IsInstanceOfType(result, typeof(RepeatCounter));
+    }
   }
+
 }
