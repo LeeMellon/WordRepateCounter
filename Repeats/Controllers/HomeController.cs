@@ -17,8 +17,15 @@ namespace Repeats.Controllers
           [HttpPost("/")]
           public ActionResult Result()
           {
-            
-            return View();
+            string testWord = Request.Form["testWord"];
+            string targetString = Request.Form["targetString"];
+            RepeatCounter newRepeatCounter = new RepeatCounter();
+            newRepeatCounter.SetTestWord(testWord);
+            newRepeatCounter.SetTargetString(targetString);
+            newRepeatCounter.SetRemovals();
+            newRepeatCounter.CleanTargetStrings();
+            newRepeatCounter.CompareStrings();
+            return View("Index", newRepeatCounter);
           }
 
 
