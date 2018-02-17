@@ -13,9 +13,9 @@ namespace Repeats.Models
       private string _targetString;
       private List<string> _targetStringList;
       private int _repeats;
-      // private List<string> _removals = new List<string>(){
-      //   "{", "}", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "=", "-", "0", "9", "8", "7", "6", "5", "4", "3", "2", "1", "'", ";", ":", "?", "/", ">", ".", ",", "<"};
-      //
+      private List<string> _removals = new List<string>(){
+        "{", "}", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "=", "-", "0", "9", "8", "7", "6", "5", "4", "3", "2", "1", "'", ";", ":", "?", "/", ">", ".", ",", "<"};
+
 
       public string GetTestWord()
       {
@@ -42,11 +42,6 @@ namespace Repeats.Models
         return _targetStringList;
       }
 
-      public void SetTestWord(string newTestWord)
-      {
-        _testWord = newTestWord.Trim();
-        SetRemovals(_testWord);
-      }
 
       public void SetTargetString(string newTargetString)
       {
@@ -58,6 +53,12 @@ namespace Repeats.Models
         _repeats += newCounter;
       }
 
+      public void SetTestWord(string newTestWord)
+      {
+        _testWord = newTestWord.Trim();
+        SetRemovals();
+      }
+
       public void SetRemovals()
       {
         List<string> newRemoval = new List<string>();
@@ -67,6 +68,10 @@ namespace Repeats.Models
           newRemoval.Add(item);
         }
         _removals = newRemoval;
+        Console.WriteLine("Removals");
+        CleanTargetStrings();
+
+
       }
 
       public void SetTargetStringList(string newString)
@@ -74,6 +79,8 @@ namespace Repeats.Models
         string[] split = newString.Split(' ');
         List<String> newList=new List<string>(split);
         _targetStringList = newList;
+        Console.WriteLine("SetStrings" + _targetStringList[0] + _targetStringList[1] + _targetStringList[2]);
+
       }
 
       public void CleanTargetStrings()
@@ -91,6 +98,8 @@ namespace Repeats.Models
           }
         }
          _targetStringList = newTargetList;
+         Console.WriteLine("Clean" + _targetStringList[0] + _targetStringList[1] + _targetStringList[2]);
+         CompareStrings();
 
       }
 
@@ -98,16 +107,23 @@ namespace Repeats.Models
       {
         foreach(string word in _targetStringList)
         {
-          if(word == _testWord)
+          if (word.Equals(_testWord, StringComparison.OrdinalIgnoreCase));
           {
             SetRepeatsCounter(1);
           }
+          Console.WriteLine("Compare" + word + _testWord);
         }
+
+
       }
 
       public void MasterMethod(string newTestWord, string newTargetString)
-      SetTestWord(newTestWord);
-      SetTargetStringList(newTestString);
+      {
+        Console.WriteLine("Master");
+        SetTargetStringList(newTargetString);
+        SetTestWord(newTestWord);
+
+      }
 
   }
 }

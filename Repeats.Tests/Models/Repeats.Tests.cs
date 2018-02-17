@@ -122,21 +122,20 @@ namespace Repeats.Tests
     //
     //   Assert.AreEqual(2, repeatInt);
     // }
-
-    [TestMethod]
-    public void GetStrings_RefactorToOneMethod_Red()
-    {
-      //arrange
-      RepeatCounter newRepeatCounter = new RepeatCounter();
-      //action
-      string newTestWord = "WAY";
-      string newTargetString = "hello@ is a weird way! of saying hello, heLLO@"
-      newRepeatCounter(newTestWord, newTestString);
-      //assert
-
-      Assert.AreEqual(2, newRepeatCounter.GetRepeats());
-    }
-
+    //
+    // [TestMethod]
+    // public void GetStrings_RefactorToOneMethod_Red()
+    // {
+    //   //arrange
+    //   RepeatCounter newRepeatCounter = new RepeatCounter();
+    //   //action
+    //   string newTestWord = "WAY";
+    //   string newTargetString = "hello@ is a weird way! of saying hello, heLLO@";
+    //   newRepeatCounter.MasterMethod(newTestWord, newTargetString);
+    //   //assert
+    //
+    //   Assert.AreEqual(2, newRepeatCounter.GetRepeats());
+    // }
 
     [TestMethod]
     public void GetStrings_RefactorToOneMethod_Green()
@@ -144,12 +143,13 @@ namespace Repeats.Tests
       //arrange
       RepeatCounter newRepeatCounter = new RepeatCounter();
       //action
-      string newTestWord = "HELLO@";
-      string newTargetString = "hello@ is a weird way of saying hello, heLLO@"
-      newRepeatCounter(newTestWord, newTargetString);
+      string newTestWord = "HeLLo";
+      string newTargetString = "Hello@ is a weird way of saying hello, hello@";
+      newRepeatCounter.MasterMethod(newTestWord, newTargetString);
+      // int num =  newRepeatCounter.GetRepeats();
       //assert
 
-      Assert.AreEqual(2, newRepeatCounter.GetRepeats());
+      Assert.AreEqual(2,  newRepeatCounter.GetRepeats());
     }
 
 
