@@ -20,7 +20,7 @@
   3. Create "Removals Array" (TBD)
   Input: If the Test String contains any non-letter-character it WILL be tested.
   Output: Any non-letter-character NOT included in the Test String, but present in the (still to be developed) "Removals Array" will taken out of each individual string in the string array created in the previous step.  
-  Why: Sans a specific set of test criteria, it seems most utilitarian to allow the User search for  a Test String that could contain non-letter-characters. Possible applications would include searching a code block for a specific phrase or method that might contain such characters. Or social media applications such as searching for usernames or Twitter handles that often include such characters.  
+  Why: Sans a specific set of test criteria, it seems most utilitarian to allow the User search for  a Test String that could contain non-letter-characters. Possible applications would include searching a code block for a specific phrase or method that might contain such characters. Or social media applications such as searching for usernames or Twitter handles that often include such characters. (This list has since been heavily cut down as it caused more problems than it solved.)
 
   4. Split the string arrays into "cleaned" arrays, removing all unwanted characters.
   Input: {"#CatPerson4."} (with '.' on the removals array, but "#CatPerson4" being the Test String )
@@ -35,7 +35,7 @@
   6. Count and return the number of repeats of the Test String in the Target String.
   Input: Test String :"HI", Target Array: ["hi", "there"]
   Output: "HI" is in "hi there" 1 time(s).
-  Why: This is what the app is supposed to do. 
+  Why: This is what the app is supposed to do.
 
 ## Setup/Installation Requirements
 
