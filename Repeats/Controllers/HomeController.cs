@@ -7,20 +7,20 @@ namespace Repeats.Controllers
 {
     public class HomeController : Controller
     {
-      // [HttpGet("/")]
-      //     public ActionResult Index()
-      //     {
-      //
-      //       return View();
-      //
-      //     }
-      //     [HttpPost("/")]
-      //     public ActionResult Result()
-      //     {
-      //
-      //       return View();
-      //     }
-      // 
+      [HttpGet("/")]
+          public ActionResult Index()
+          {
+
+            return View();
+
+          }
+          [HttpPost("/")]
+          public ActionResult Result()
+          {
+
+            return View();
+          }
+
 
     }
 }
