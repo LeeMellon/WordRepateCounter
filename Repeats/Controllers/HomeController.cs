@@ -20,8 +20,8 @@ namespace Repeats.Controllers
             string testWord = Request.Form["testWord"];
             string targetString = Request.Form["targetString"];
             RepeatCounter newRepeatCounter = new RepeatCounter();
+            newRepeatCounter.SetTargetStringList(targetString);
             newRepeatCounter.SetTestWord(testWord);
-            newRepeatCounter.SetTargetString(targetString);
             newRepeatCounter.SetRemovals();
             newRepeatCounter.CleanTargetStrings();
             newRepeatCounter.CompareStrings();

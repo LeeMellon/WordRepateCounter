@@ -40,14 +40,12 @@ namespace Repeats.Tests
       //arrange
       RepeatCounter newRepeatCounter = new RepeatCounter();
       //action
-      newRepeatCounter.SetTargetStringList("Hell*o Wo*rld");
+      newRepeatCounter.SetTargetStringList("Hell*o");
       newRepeatCounter.CleanTargetStrings();
       List<string> testingList = newRepeatCounter.GetTargetStringList();
-      string TargetStringListIndexOne = testingList[1];
       string TargetStringListIndexZero = testingList[0];
       //assert
 
-      Assert.AreEqual("World", TargetStringListIndexOne);
       Assert.AreEqual("Hello", TargetStringListIndexZero);
     }
 
@@ -60,7 +58,7 @@ namespace Repeats.Tests
       newRepeatCounter.SetTargetStringList("Hell*o Wo*rld");
       newRepeatCounter.CleanTargetStrings();
       List<string> testingList = newRepeatCounter.GetTargetStringList();
-      string TargetStringListIndexOne = testingList[1];
+      string TargetStringListIndexOne = testingList[0];
       //assert
 
       Assert.AreEqual("Wo*rld", TargetStringListIndexOne);

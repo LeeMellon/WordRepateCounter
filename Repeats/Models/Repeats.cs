@@ -14,7 +14,7 @@ namespace Repeats.Models
       private List<string> _targetStringList;
       private int _repeats;
       private List<string> _removals = new List<string>(){
-        "{", "}", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "=", "-", "0", "9", "8", "7", "6", "5", "4", "3", "2", "1", "'", ";", ":", "?", "/", ">", ".", ",", "<"};
+        "{", "}", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "=", "-", "0", "9", "8", "7", "6", "5", "4", "3", "2", "1", "'", ";", ":", "?", "/", ">", ".", ",", "<", "*"};
 
 
       public string GetTestWord()
@@ -80,12 +80,17 @@ namespace Repeats.Models
         List<string> newTargetList = new List<string>();
         foreach(string word in _targetStringList)
         {
-          foreach(string item in _removals)
+          for(int x =0; x <= 34; x++)
           {
-            if (word.Contains(item))
+            bool IfContains = word.Contains(_removals[x]);
+            if (IfContains == true)
             {
-              string replacementString = word.Replace(item, "");
+              string replacementString = word.Replace(_removals[x], "");
               newTargetList.Add(replacementString);
+            }
+            else if(x == 34)
+            {
+              newTargetList.Add(word);
             }
           }
         }
@@ -97,7 +102,8 @@ namespace Repeats.Models
       {
         foreach(string word in _targetStringList)
         {
-          if(word == _testWord)
+          bool Compare = String.Equals(word, _testWord, StringComparison.OrdinalIgnoreCase);
+          if(Compare == true)
           {
             SetRepeatsCounter(1);
           }

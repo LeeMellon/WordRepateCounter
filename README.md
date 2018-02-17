@@ -22,9 +22,9 @@
   Output: Any non-letter-character NOT included in the Test String, but present in the (still to be developed) "Removals Array" will taken out of each individual string in the string array created in the previous step.  
   Why: Sans a specific set of test criteria, it seems most utilitarian to allow the User search for  a Test String that could contain non-letter-characters. Possible applications would include searching a code block for a specific phrase or method that might contain such characters. Or social media applications such as searching for usernames or Twitter handles that often include such characters. (This list has since been heavily cut down as it caused more problems than it solved.)
 
-  4. Split the string arrays into "cleaned" arrays, removing all unwanted characters.
-  Input: {"#CatPerson4."} (with '.' on the removals array, but "#CatPerson4" being the Test String )
-  Output:{"#CatPerson4"}}
+  4. Split the list of strings into "cleaned" strings, removing all unwanted characters.
+  Input: {'#CatPerson4.'} (with '.' on the removals array, but "#CatPerson4" being the Test String )
+  Output:{'#CatPerson4'}}
   Why: for the purposes of comparison, as stated above.
 
   5. Compare Arrays.
@@ -66,7 +66,7 @@ git clone https://github.com/LeeMellon/WordRepateCounter.git
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_{ Double Quote mark not available for _removals list. No other bugs found yet. }_
 
 ## Support and contact details
 
