@@ -13,9 +13,9 @@ namespace Repeats.Models
       private string _targetString;
       private List<string> _targetStringList;
       private int _repeats;
-      private List<string> _removals = new List<string>(){
-        "{", "}", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "=", "-", "0", "9", "8", "7", "6", "5", "4", "3", "2", "1", "'", ";", ":", "?", "/", ">", ".", ",", "<"};
-
+      // private List<string> _removals = new List<string>(){
+      //   "{", "}", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "=", "-", "0", "9", "8", "7", "6", "5", "4", "3", "2", "1", "'", ";", ":", "?", "/", ">", ".", ",", "<"};
+      //
 
       public string GetTestWord()
       {
@@ -45,6 +45,7 @@ namespace Repeats.Models
       public void SetTestWord(string newTestWord)
       {
         _testWord = newTestWord.Trim();
+        SetRemovals(_testWord);
       }
 
       public void SetTargetString(string newTargetString)
@@ -104,6 +105,9 @@ namespace Repeats.Models
         }
       }
 
+      public void MasterMethod(string newTestWord, string newTargetString)
+      SetTestWord(newTestWord);
+      SetTargetStringList(newTestString);
 
   }
 }
