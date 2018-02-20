@@ -50,21 +50,6 @@ namespace Repeats.Tests
     }
 
     [TestMethod]
-    public void CleanTargetStrings_RemoveAsterix_Red()
-    {
-      //arrange
-      RepeatCounter newRepeatCounter = new RepeatCounter();
-      //action
-      newRepeatCounter.SetTargetStringList("Hell*o Wo*rld");
-      newRepeatCounter.CleanTargetStrings();
-      List<string> testingList = newRepeatCounter.GetTargetStringList();
-      string TargetStringListIndexOne = testingList[0];
-      //assert
-
-      Assert.AreEqual("Wo*rld", TargetStringListIndexOne);
-    }
-
-    [TestMethod]
     public void CompareStrings_CounterToTwo_Green()
     {
       //arrange
@@ -83,24 +68,6 @@ namespace Repeats.Tests
       Assert.AreEqual(2, repeatInt);
     }
 
-    [TestMethod]
-    public void CompareStrings_CounterToTwo_Red()
-    {
-      //arrange
-      RepeatCounter newRepeatCounter = new RepeatCounter();
-      //action
-      newRepeatCounter.SetTestWord(" Hello ");
-      string test = newRepeatCounter.GetTestWord();
-      newRepeatCounter.SetTargetStringList("Hell* H@ello");
-      newRepeatCounter.CleanTargetStrings();
-      List<string> testList = newRepeatCounter.GetTargetStringList();
-      newRepeatCounter.CompareStrings();
-      int repeatInt = newRepeatCounter.GetRepeats();
-
-      //assert
-
-      Assert.AreEqual(2, repeatInt);
-    }
     [TestMethod]
     public void CompareStrings_TestWordWithExclusion_Green()
     {
